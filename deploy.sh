@@ -29,6 +29,16 @@ fi
 echo "📌 Disabling Jekyll..."
 touch docs/.nojekyll
 
+# Get commit message from argument or use default
+COMMIT_MSG=${1:-"Deploy Angular to GitHub Pages"}
+
+# Commit and push changes
+echo "📦 Committing and pushing changes..."
+git add --force docs/.nojekyll
+git add docs/
+git commit -m "$COMMIT_MSG"
+git push origin main
+
 # Deploy to GitHub Pages
 echo "🚀 Deploying to GitHub Pages..."
 npx angular-cli-ghpages --dir=docs
