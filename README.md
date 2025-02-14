@@ -25,7 +25,5 @@ Before cloning the project, ensure you have the following installed on your syst
 
 ## Build and deploy
 
-1. ng build --configuration=production --output-path docs --base-href /portfolio/
-2. npx angular-cli-ghpages --dir=docs
-
+- **Run the script to automatically build and deploy on github** ./deploy.sh
 - **Website link** [https://denamielleonardo.github.io/portfolio/]
