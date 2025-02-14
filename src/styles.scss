@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+img {
+    max-width: 100%;
+    display: flex;
+}
+  
+a {
+    text-decoration: none;
+}
+  
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #18181B;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 5rem 2rem;
+}
+
+.primary-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #1541bb;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    :hover {
+        background-color: darken(#1541bb, 10%);
+    }
+}
+
+.primary-btn:hover {
+    background-color: darken(#1541bb, 10%);
+}
