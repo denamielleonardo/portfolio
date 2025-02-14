@@ -23,7 +23,17 @@ Before cloning the project, ensure you have the following installed on your syst
 4. Start the development server:
    ng serve and run http://localhost:4200/
 
-## Build and deploy
+## Automatic Build and Deploy
 
 - **Run the script to automatically build and deploy on github** ./deploy.sh
 - **Website link** [https://denamielleonardo.github.io/portfolio/]
+
+## Manual Build and Deploy
+
+1. rm -rf docs/
+2. ng build --configuration production --output-path docs --base-href "/portfolio/"
+3. touch docs/.nojekyll
+4. git add --force docs/.nojekyll docs/
+5. git commit -m "Test Deploy"
+6. git push origin main
+7. npx angular-cli-ghpages --dir=docs
