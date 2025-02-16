@@ -25,7 +25,7 @@ Before cloning the project, ensure you have the following installed on your syst
 
 ## Automatic Build and Deploy
 
-- **Run the script to automatically build and deploy on github** ./deploy.sh
+- **Run the script to automatically build and deploy on github** ./deploy.sh "commit message"
 - **Website link** [https://denamielleonardo.github.io/portfolio/]
 
 ## Manual Build and Deploy

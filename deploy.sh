@@ -35,7 +35,7 @@ COMMIT_MSG=${1:-"Deploy Angular to GitHub Pages"}
 # Commit and push changes
 echo "📦 Committing and pushing changes..."
 git add --force docs/.nojekyll
-git add docs/
+git add .
 git commit . -m "$COMMIT_MSG"
 git push origin main
 
