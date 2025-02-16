@@ -19,10 +19,13 @@
   <div class="content">
     <span class="blur"></span>  
     <span class="blur"></span>
-    <h4>Welcome to my world!</h4>
+    <!-- <h4>Welcome to my world!</h4>
     <h1>Hi, I'm <span>Den Amiel</span><br />a Software Developer</h1>
-    <p>Passionate about building innovative and scalable solutions, turning ideas into reality with clean and efficient code.</p>
-    <a href="./assets/files/LEONARDO, DEN AMIEL C. - RESUME.pdf" class="primary-btn resume" download="LEONARDO, DEN AMIEL C. - RESUME.pdf">Download CV</a>
+    <p>Passionate about building innovative and scalable solutions, turning ideas into reality with clean and efficient code.</p> -->
+    <h4 [innerHTML]="displayedText[0]"></h4>
+    <h1 [innerHTML]="displayedText[1]"></h1>
+    <p [innerHTML]="displayedText[2]"></p>
+    <a  *ngIf="isTypingComplete" href="./assets/files/LEONARDO, DEN AMIEL C. - RESUME.pdf" class="primary-btn resume" download="LEONARDO, DEN AMIEL C. - RESUME.pdf">Download CV</a>
   </div>
 
   <div class="image">
