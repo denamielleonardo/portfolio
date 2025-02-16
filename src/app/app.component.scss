@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-$primary-bg: #18181B;
-$primary-text: #fff;
-$secondary-text: #ccc;
-$accent-color: #1541bb;
-
 nav {
     max-width: 1200px;
     display: flex;
@@ -26,7 +21,7 @@ nav {
 
         a {
             position: relative;
-            color: $primary-text;
+            color: var(--primary-text);
             padding-bottom: 0.75rem;
         }
 
@@ -37,7 +32,7 @@ nav {
             width: 0;
             bottom: 0;
             left: 0;
-            background-color: $accent-color;
+            background-color: var(--accent-color);
             transition: all 0.3s ease;
         }
 
@@ -58,12 +53,12 @@ header {
 
         span.blur {
             position: absolute;
-            box-shadow: 0 0 1000px 50px $accent-color;
+            box-shadow: 0 0 1000px 50px var(--accent-color);
             z-index: -100;
         }
 
         h4 {
-            color: $secondary-text;
+            color: var(--secondary-text);
             margin-bottom: 1rem;
             font-weight: 600;
             font-size: 1rem;
@@ -71,7 +66,7 @@ header {
         }
 
         h1 {
-            color: $primary-text;
+            color: var(--primary-text);
             margin-bottom: 1rem;
             font-size: 3rem;
             font-weight: 700;
@@ -79,13 +74,13 @@ header {
 
             span {
                 -webkit-text-fill-color: transparent;
-                -webkit-text-stroke: 1px $primary-text;
+                -webkit-text-stroke: 1px var(--primary-text);
             }
         }
 
         p {
-            color: $secondary-text;
-            margin-bottom: 0.75rem;
+            color: var(--secondary-text);
+            margin-bottom: 2rem;
         }
     }
 
@@ -102,7 +97,7 @@ header {
         position: absolute;
         top: 50%;
         left: 60%;
-        box-shadow: 0 0 1000px 100px $accent-color;
+        box-shadow: 0 0 1000px 100px var(--accent-color);
         z-index: -100;
     }
 }
