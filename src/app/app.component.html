@@ -1,27 +1,23 @@
 <nav>
     <div class="nav-logo">
-      <a href="#">
+      <a href="#home">
         <img src="./assets/logo/logo_1_enhanced_nobg.png">
       </a>
     </div>
 
     <ul class="nav-links">
-      <li class="link"><a href="#">Home</a></li>
-      <li class="link"><a href="#">About</a></li>
-      <li class="link"><a href="#">Portfolio</a></li>
-      <li class="link"><a href="#">Contacts</a></li>
+      <li class="link"><a href="#home">Home</a></li>
+      <li class="link"><a href="#about">About</a></li>
+      <li class="link"><a href="#portfolio">Portfolio</a></li>
+      <li class="link"><a href="#contacts">Contacts</a></li>
       <button class="primary-btn">Hire Me</button>
     </ul>
 </nav>
 
-<header class="container">
-  
+<header class="container" id="home">
   <div class="content">
     <span class="blur"></span>  
     <span class="blur"></span>
-    <!-- <h4>Welcome to my world!</h4>
-    <h1>Hi, I'm <span>Den Amiel</span><br />a Software Developer</h1>
-    <p>Passionate about building innovative and scalable solutions, turning ideas into reality with clean and efficient code.</p> -->
     <h4 [innerHTML]="displayedText[0]"></h4>
     <h1 [innerHTML]="displayedText[1]"></h1>
     <p [innerHTML]="displayedText[2]"></p>
@@ -33,7 +29,22 @@
   </div>
 </header>
 
-<section class="container">
+<section class="container about-me" id="about">
+  <div class="image">
+    <img src="./assets/imgs/me.png">
+  </div>
+  
+  <div class="content">
+    <span class="blur"></span>  
+    <span class="blur"></span>
+    <h1>About me</h1>
+    <p>I am a seasoned Senior Software Developer with over seven years of experience designing and developing high-performance, user-centric applications. My expertise spans Angular, Ionic, React, and other modern frameworks, enabling me to build scalable, efficient, and intuitive solutions that enhance user experiences.</p>
+    <p>Driven by a passion for problem-solving and innovation, I thrive on leveraging technology to tackle real-world challenges. I stay ahead of the curve by continuously learning and adapting to the latest industry trends, ensuring my skill set remains cutting-edge.</p>
+    <p>I am eager to contribute my expertise to meaningful projects that make an impact while continuing to evolve as a developer. Let's build something great together!</p>
+  </div>
 </section>
+
+<!-- <section class="container portfolio"></section>
+<section class="container contacts"></section> -->
 
 <router-outlet></router-outlet>
