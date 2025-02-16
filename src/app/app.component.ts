@@ -9,7 +9,7 @@ export class AppComponent {
 
   texts = [
     "Welcome to my world!",
-    "Hi, I'm <span>Den Amiel</span>\na Software Developer",
+    "Hi, I'm <span>Den Amiel</span><br />a Software Developer",
     "Passionate about building innovative and scalable solutions, turning ideas into reality with clean and efficient code."
   ];
   displayedText: string[] = ["", "", ""];
