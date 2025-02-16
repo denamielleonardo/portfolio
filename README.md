@@ -33,7 +33,7 @@ Before cloning the project, ensure you have the following installed on your syst
 1. rm -rf docs/
 2. ng build --configuration production --output-path docs --base-href "/portfolio/"
 3. touch docs/.nojekyll
-4. git add --force docs/.nojekyll docs/
-5. git commit -m "Test Deploy"
+4. git add --force docs/.nojekyll
+5. git commit -m "Add .nojekyll to disable Jekyll"
 6. git push origin main
 7. npx angular-cli-ghpages --dir=docs
