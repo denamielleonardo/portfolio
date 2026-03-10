@@ -1,50 +1,96 @@
-<nav>
-    <div class="nav-logo">
-      <a href="#home">
-        <img src="./assets/logo/logo_1_enhanced_nobg.png">
-      </a>
+<div class="main-container">
+  <div class="left-container">
+    <img src="https://media.istockphoto.com/id/2220470068/photo/successful-professional-typing-on-laptop-working-intently-at-sleek-workspace-with-focused.jpg?s=1024x1024&w=is&k=20&c=ld0tX56VJb0TS5oVs5HNVvZCsfBdFlgiUWwJSlVr-Jk=" alt="">
+    
+    <div class="details">
+      <h3>Den Amiel Leonardo</h3>
+      <p class="header">Senior Software Engineer</p>
+      <p class="small align"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-4 h-4 flex-shrink-0" aria-hidden="true" data-replit-metadata="client/src/pages/Home.tsx:133:18" data-component-name="Phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg> +63 916 730 9212</p>
+      <p class="small align">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail w-4 h-4 flex-shrink-0" aria-hidden="true" data-replit-metadata="client/src/pages/Home.tsx:137:18" data-component-name="Mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>denamielleonardo199726@gmail.com
+      </p>
+      <p class="small align">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin w-4 h-4 flex-shrink-0" aria-hidden="true" data-replit-metadata="client/src/pages/Home.tsx:141:18" data-component-name="Linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>linkedin.com/in/denamielleonardo
+      </p>
     </div>
-
-    <ul class="nav-links">
-      <li class="link"><a href="#home">Home</a></li>
-      <li class="link"><a href="#about">About</a></li>
-      <li class="link"><a href="#portfolio">Portfolio</a></li>
-      <li class="link"><a href="#contacts">Contacts</a></li>
-      <button class="primary-btn">Hire Me</button>
-    </ul>
-</nav>
-
-<header class="container" id="home">
-  <div class="content">
-    <span class="blur"></span>  
-    <span class="blur"></span>
-    <h4 [innerHTML]="displayedText[0]"></h4>
-    <h1 [innerHTML]="displayedText[1]"></h1>
-    <p [innerHTML]="displayedText[2]"></p>
-    <a  *ngIf="isTypingComplete" href="./assets/files/LEONARDO, DEN AMIEL C. - RESUME.pdf" class="primary-btn resume" download="LEONARDO, DEN AMIEL C. - RESUME.pdf">Download CV</a>
   </div>
 
-  <div class="image">
-    <img src="./assets/imgs/me.png">
-  </div>
-</header>
+  <div class="right-container">
+    <section class="cover-letter">
+      <p>
+        I'm a Senior Software Developer based in the Philippines with 8+ years of experience building robust, scalable applications. I specialize in creating high-performance mobile and web solutions using modern frameworks like <span class="highlight">Angular</span>, <span class="highlight">Ionic</span>, <span class="highlight">Flutter</span>, and <span class="highlight">React Native</span>.
+      </p>
 
-<section class="container about-me" id="about">
-  <div class="image">
-    <img src="./assets/imgs/me.png">
-  </div>
-  
-  <div class="content">
-    <span class="blur"></span>  
-    <span class="blur"></span>
-    <h1>About me</h1>
-    <p>I am a seasoned Senior Software Developer with over seven years of experience designing and developing high-performance, user-centric applications. My expertise spans Angular, Ionic, React, and other modern frameworks, enabling me to build scalable, efficient, and intuitive solutions that enhance user experiences.</p>
-    <p>Driven by a passion for problem-solving and innovation, I thrive on leveraging technology to tackle real-world challenges. I stay ahead of the curve by continuously learning and adapting to the latest industry trends, ensuring my skill set remains cutting-edge.</p>
-    <p>I am eager to contribute my expertise to meaningful projects that make an impact while continuing to evolve as a developer. Let's build something great together!</p>
-  </div>
-</section>
+      <br />
 
-<!-- <section class="container portfolio"></section>
-<section class="container contacts"></section> -->
+      <p>
+        Throughout my career, I've worked with leading companies including <span class="highlight">Cario</span>, <span class="highlight">Ahsay Operation Centre Limited</span>, <span class="highlight">Eclectus Technologies Inc.</span>, and <span class="highlight">Wireless Link Technologies</span>. I'm passionate about developing applications that solve real business problems in logistics, agriculture, and enterprise sectors.
+      </p>
+
+      <br />
+
+      <p>
+        I hold a Bachelor of Science in Information Technology from the University of the East. When I'm not coding, I enjoy exploring new technologies and staying current with industry trends.
+      </p>
+    </section>
+
+    <section class="experience">
+      <div class="card">
+        <div class="year">
+          <p>March 2020 - Present</p>
+        </div>
+
+        <div class="content">
+          <p class="highlight">Full Stack Developer</p>
+          <p class="small">Cario · Australia</p>
+          <p class="small summary">Lead the development of a mobile application for logistics management, resulting in a 30% increase in operational efficiency.</p>
+        </div>
+      </div> 
+
+      <div class="card">
+        <div class="year">
+          <p>Aug 2023 — Feb 2025</p>
+        </div>
+        <div class="content">
+          <p class="highlight">Mobile Application Developer</p>
+          <p class="small">Ahsay Operation Centre Limited · Makati City</p>
+          <p class="small summary">Designed, built and maintained high performance, reusable reliable code including UI and core functionality. Explored and worked on hybrid applications as needed.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="year">
+          <p>Dec 2018 — Aug 2023</p>
+        </div>
+
+        <div class="content">
+          <p class="highlight">Senior Software Developer</p>
+          <p class="small">Eclectus Technologies Inc. · Taguig City</p>
+          <p class="small summary">Conceptualized, designed, developed and improved/maintained in-house applications. Acted as project lead driving requirements gathering, design and deployment. Explored and worked on hybrid applications.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="year">
+          <p>June 2017 — Oct 2018</p>
+        </div>
+
+        <div class="content">
+          <p class="highlight">Junior Software Developer</p>
+          <p class="small">Wireless Link Technologies Inc. · Manila City</p>
+          <p class="small summary">Implemented new services in applications as needed. Designed, built and maintained high performance reusable code. Explored and worked on hybrid applications.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills">
+      <h3>Skills sections</h3>
+    </section>
+
+    <section class="projects">
+      <h3>Projects section</h3>
+    </section>
+  </div>
+</div>
 
 <router-outlet></router-outlet>

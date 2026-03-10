@@ -27,26 +27,30 @@ body {
     background-color: var(--primary-bg);
 }
 
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 5rem 2rem;
+h3 {
+    font-size: 3rem;
+    color: #fff;
+    line-height: 1;
 }
 
-.primary-btn {
-    padding: 1rem 2rem;
+p {
     font-size: 1rem;
-    color: var(--primary-text);
-    background-color: var(--accent-color);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    // text-align: justify;
 
-    :hover {
-        background-color: var(--accent-color-dark);
+    &.small {
+        font-size: 0.875rem;
+    }
+
+    &.header {
+        font-size: 1.25rem;
+    }
+
+    &.align {
+        display: flex;
+        align-items: center;
     }
 }
 
-.primary-btn:hover {
-    background-color: var(--accent-color-dark);
+.highlight {
+    color: #fff;
 }
