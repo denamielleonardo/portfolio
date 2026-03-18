@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 
 interface Experience {
   period: string;
@@ -18,6 +18,7 @@ interface Project {
   description: string;
   tags: string[];
   link?: string;
+  image?: string;
 }
 
 @Component({
@@ -25,7 +26,7 @@ interface Project {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   isDarkMode = true;
   isAnimating = false;
@@ -113,13 +114,15 @@ export class AppComponent implements OnInit {
       title: 'Cario Connect App',
       description: 'Cross-platform mobile app available on Google Play Store & App Store for fleet operations and management.',
       tags: ['Flutter', 'Bloc', '.NET Core', 'Azure Maps', 'SQLite', 'Firebase'],
-      link: 'https://apps.apple.com/au/app/carioconnect-v2/id6746742162'
+      link: 'https://apps.apple.com/au/app/carioconnect-v2/id6746742162',
+      image: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cf/14/1a/cf141a92-9730-39ef-8108-e8b161608587/productionAppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/400x400ia-75.webp'
     },
     {
       title: 'Kinboy App',
       description: 'High-performance mobile application with real-time data synchronization across platforms.',
       tags: ['Angular', 'Ionic Framework', 'TypeScript', 'SQLite', 'Firebase'],
-      link: 'https://play.google.com/store/apps/details?id=com.kintips.goldminer&hl=fil'
+      link: 'https://play.google.com/store/apps/details?id=com.kintips.goldminer&hl=fil',
+      image: 'https://play-lh.googleusercontent.com/lMF-SebotOOOvKp-anIqUlY9b7HMr7kgs5OGxaJNBakSp2bq_pnNqJKeOsE-nrfLfp0A=s96-rw'
     },
     {
       title: 'Eclectus Farms System',
@@ -130,13 +133,15 @@ export class AppComponent implements OnInit {
       title: 'Larga Delivery App',
       description: 'Delivery management application for logistics operations and order fulfillment.',
       tags: ['Angular', 'Ionic Framework', 'TypeScript', 'Firebase'],
-      link: 'https://play.google.com/store/apps/details?id=com.eclectustechnologiesinc.largaproduction&hl=en'
+      link: 'https://play.google.com/store/apps/details?id=com.eclectustechnologiesinc.largaproduction&hl=en',
+      image: 'https://play-lh.googleusercontent.com/nPmCLd63Z8hNjkQV5oCb7uzbzDuNNXRD7AOvcAfaK7EQDNK3WXGPzza4qQlMSMLF2tE=w480-h960-rw'
     },
     {
       title: 'Eclectus Farms Warehouse Management App',
       description: 'Warehouse management application for agricultural supply chain operations.',
       tags: ['Angular', 'Ionic Framework', 'TypeScript', 'Firebase'],
-      link: 'https://play.google.com/store/apps/details?id=com.eclectustechnologiesinc.warehousemanagementproduction&hl=en'
+      link: 'https://play.google.com/store/apps/details?id=com.eclectustechnologiesinc.warehousemanagementproduction&hl=en',
+      image: 'https://play-lh.googleusercontent.com/-g138038gu3qyTACVOcuJerCth6Sbc8IyNWDCuxpBOAsM4HXdNtL9Ejeu77kWpt54w=w480-h960-rw'
     },
     {
       title: 'DFDelivers Order Fulfillment App',
@@ -147,19 +152,22 @@ export class AppComponent implements OnInit {
       title: 'Eclectus Farms Farmers App',
       description: 'Mobile application for farmer field operations and data collection.',
       tags: ['Angular', 'Ionic Framework', 'TypeScript', 'Firebase'],
-      link: 'https://play.google.com/store/apps/details?id=com.eclectustechnologiesinc.eclectusfarmsfarmersmobile'
+      link: 'https://play.google.com/store/apps/details?id=com.eclectustechnologiesinc.eclectusfarmsfarmersmobile',
+      image: 'https://play-lh.googleusercontent.com/-g138038gu3qyTACVOcuJerCth6Sbc8IyNWDCuxpBOAsM4HXdNtL9Ejeu77kWpt54w=w480-h960-rw'
     },
     {
       title: 'Eclectus Farms FieldQC App',
       description: 'Field quality control application for agricultural produce inspection.',
       tags: ['Angular', 'Ionic Framework', 'TypeScript', 'Firebase'],
-      link: 'https://play.google.com/store/apps/details?id=com.eclectustechnologiesinc.eclectusfarmsfieldqcmobile&hl=en'
+      link: 'https://play.google.com/store/apps/details?id=com.eclectustechnologiesinc.eclectusfarmsfieldqcmobile&hl=en',
+      image: 'https://play-lh.googleusercontent.com/-g138038gu3qyTACVOcuJerCth6Sbc8IyNWDCuxpBOAsM4HXdNtL9Ejeu77kWpt54w=w480-h960-rw'
     },
     {
       title: 'Eclectus Farms Store App',
       description: 'Store management application for farm produce retailing.',
       tags: ['Angular', 'Ionic Framework', 'TypeScript', 'Firebase'],
-      link: 'https://play.google.com/store/apps/details?id=com.eclectustechnologiesinc.eclectusfarmstoremobile'
+      link: 'https://play.google.com/store/apps/details?id=com.eclectustechnologiesinc.eclectusfarmstoremobile',
+      image: 'https://play-lh.googleusercontent.com/-g138038gu3qyTACVOcuJerCth6Sbc8IyNWDCuxpBOAsM4HXdNtL9Ejeu77kWpt54w=w480-h960-rw'
     },
     {
       title: 'WLT Fleet Management System',
@@ -173,18 +181,41 @@ export class AppComponent implements OnInit {
     }
   ];
 
+  private observer!: IntersectionObserver;
+
   constructor() { }
 
   ngOnInit(): void { }
 
+  ngAfterViewInit() {
+    this.observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    this.observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.15 }
+    );
+
+    document.querySelectorAll('.animate-section').forEach(el => {
+        this.observer.observe(el);
+    });
+  }
+
+  ngOnDestroy() {
+    this.observer.disconnect();
+  }
+
   openLink(url: string) {
     window.open(url, '_blank', 'noopener noreferrer');
   }
-  
+
   toggleTheme(event: MouseEvent) {
     if (this.isAnimating) return;
 
-    // Position the wipe origin at the click point
     const overlay = document.querySelector('.theme-overlay') as HTMLElement;
     const x = event.clientX;
     const y = event.clientY;
@@ -197,7 +228,6 @@ export class AppComponent implements OnInit {
 
     this.isAnimating = true;
 
-    // Switch theme at the midpoint of the animation
     setTimeout(() => {
         this.isDarkMode = !this.isDarkMode;
         document.documentElement.setAttribute(
@@ -206,7 +236,6 @@ export class AppComponent implements OnInit {
         );
     }, 200);
 
-    // Clean up after animation completes
     setTimeout(() => {
         this.isAnimating = false;
     }, 650);
