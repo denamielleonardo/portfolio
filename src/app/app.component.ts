@@ -189,15 +189,18 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     this.observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    this.observer.unobserve(entry.target);
-                }
-            });
-        },
-        { threshold: 0.15 }
+      (entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.classList.add('is-visible');
+                  this.observer.unobserve(entry.target);
+              }
+          });
+      },
+      { 
+          threshold: 0.05,
+          rootMargin: '0px 0px -50px 0px'
+      }
     );
 
     document.querySelectorAll('.animate-section').forEach(el => {

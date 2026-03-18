@@ -33,7 +33,7 @@ Before cloning the project, ensure you have the following installed on your syst
 1. Remove-Item docs/ -Recurse -Force
 2. ng build --configuration production --output-path docs --base-href "/portfolio/"
 3. New-Item docs/.nojekyll -ItemType File
-4. git add --force docs/.nojekyll
+4. git add .
 5. git commit -m "portfolio updates"
 6. git push origin main
 7. npx angular-cli-ghpages --dir=docs
