@@ -7,6 +7,19 @@ div.main-container {
     color: rgb(163, 163, 163);
     gap: 8%;
 
+    // Tablet
+    @media (max-width: 1024px) {
+        padding: 5% 8%;
+        gap: 5%;
+    }
+
+    // Mobile
+    @media (max-width: 768px) {
+        flex-direction: column;
+        padding: 6% 5%;
+        gap: 0;
+    }
+
     .left-container {
         flex: 1;
         display: flex;
@@ -16,9 +29,36 @@ div.main-container {
         top: 0;
         height: 100vh;
 
+        // Tablet
+        @media (max-width: 1024px) {
+            height: auto;
+            position: sticky;
+            top: 0;
+        }
+
+        // Mobile
+        @media (max-width: 768px) {
+            position: static;
+            height: auto;
+            align-items: flex-start;
+            margin-bottom: 8vw;
+        }
+
         img {
             border-radius: 10px;
             object-fit: cover;
+
+            // Tablet
+            @media (max-width: 1024px) {
+                width: 100%;
+                max-width: 180px;
+            }
+
+            // Mobile
+            @media (max-width: 768px) {
+                width: 100px;
+                height: 100px;
+            }
         }
 
         svg {
@@ -34,6 +74,11 @@ div.main-container {
 
             h3 {
                 margin: 30px 0 0;
+
+                @media (max-width: 768px) {
+                    margin: 16px 0 0;
+                    font-size: 1.2rem;
+                }
             }
 
             p.header {
@@ -53,6 +98,10 @@ div.main-container {
 
         section:not(:last-child) {
             margin-bottom: 10vh;
+
+            @media (max-width: 768px) {
+                margin-bottom: 8vw;
+            }
         }
 
         section.experience {
@@ -66,8 +115,18 @@ div.main-container {
                     margin-bottom: 5vh;
                 }
 
+                // Mobile
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                    gap: 4px;
+                }
+
                 .year {
                     flex: 1;
+
+                    @media (max-width: 768px) {
+                        flex: none;
+                    }
                 }
 
                 .content {
@@ -134,10 +193,51 @@ div.main-container {
                     margin-bottom: 5vh;
                 }
 
-                img {
+                .project-thumbnail {
                     background: rgb(163, 163, 163, 0.05);
                     width: 156px;
                     height: 156px;
+                    border-radius: 6px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    padding: 10px;
+                    box-sizing: border-box;
+                    text-align: center;
+
+                    span {
+                        color: rgb(163, 163, 163);
+                        font-size: 0.75rem;
+                        font-weight: 500;
+                        line-height: 1.4;
+                        word-break: break-word;
+                    }
+
+                    // Mobile
+                    @media (max-width: 480px) {
+                        width: 100%;
+                        height: auto;
+                        aspect-ratio: 16 / 9;
+                    }
+                }
+
+                // img {
+                //     background: rgb(163, 163, 163, 0.05);
+                //     width: 156px;
+                //     height: 156px;
+
+                //     // Mobile
+                //     @media (max-width: 480px) {
+                //         width: 100%;
+                //         height: auto;
+                //         aspect-ratio: 16 / 9;
+                //     }
+                // }
+
+                // Mobile: stack image above content
+                @media (max-width: 480px) {
+                    flex-direction: column;
                 }
 
                 p, div.list {

@@ -44,11 +44,6 @@
   <div class="right-container">
 
     <!-- About / Cover Letter -->
-    <!-- <section class="cover-letter">
-      <p *ngFor="let paragraph of about; let last = last" [class.mb-0]="last">
-        {{ paragraph }}
-      </p>
-    </section> -->
     <section class="cover-letter">
       <p>
         I'm a Senior Software Developer based in the Philippines with 8+ years of experience building robust, scalable applications. I specialize in creating high-performance mobile and web solutions using modern frameworks like <span class="highlight">Angular</span>, <span class="highlight">Ionic</span>, <span class="highlight">Flutter</span>, and <span class="highlight">React Native</span>.
@@ -98,6 +93,10 @@
       <div class="container">
         <div class="card" *ngFor="let project of projects">
           <img src="" alt="">
+          <div class="project-thumbnail">
+            <span>{{ "img" }}</span>
+            <!-- <span>{{ project.title }}</span> -->
+          </div>
           <div class="content">
             <p class="highlight">{{ project.title }}</p>
             <p class="small">{{ project.description }}</p>
