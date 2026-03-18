@@ -30,9 +30,10 @@ Before cloning the project, ensure you have the following installed on your syst
 
 ## Manual Build and Deploy
 
-1. rm -rf docs/
+1. Remove-Item docs/ -Recurse -Force
 2. ng build --configuration production --output-path docs --base-href "/portfolio/"
-3. touch docs/.nojekyll
+<!-- 3. touch docs/.nojekyll -->
+3. New-Item docs/.nojekyll -ItemType File
 4. git add --force docs/.nojekyll
 5. git commit -m "Add .nojekyll to disable Jekyll"
 6. git push origin main
