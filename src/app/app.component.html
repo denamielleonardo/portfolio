@@ -1,21 +1,54 @@
 <div class="main-container">
+
+  <!-- LEFT PANEL -->
   <div class="left-container">
-    <img src="https://media.istockphoto.com/id/2220470068/photo/successful-professional-typing-on-laptop-working-intently-at-sleek-workspace-with-focused.jpg?s=1024x1024&w=is&k=20&c=ld0tX56VJb0TS5oVs5HNVvZCsfBdFlgiUWwJSlVr-Jk=" alt="">
-    
+    <img [src]="profileImage" [alt]="name" class="profile-image" />
+
     <div class="details">
-      <h3>Den Amiel Leonardo</h3>
-      <p class="header">Senior Software Engineer</p>
-      <p class="small align"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-4 h-4 flex-shrink-0" aria-hidden="true" data-replit-metadata="client/src/pages/Home.tsx:133:18" data-component-name="Phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg> +63 916 730 9212</p>
+      <h3>{{ name }}</h3>
+      <p class="header">{{ role }}</p>
+
       <p class="small align">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail w-4 h-4 flex-shrink-0" aria-hidden="true" data-replit-metadata="client/src/pages/Home.tsx:137:18" data-component-name="Mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>denamielleonardo199726@gmail.com
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path>
+        </svg>
+        {{ phone }}
       </p>
+
       <p class="small align">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin w-4 h-4 flex-shrink-0" aria-hidden="true" data-replit-metadata="client/src/pages/Home.tsx:141:18" data-component-name="Linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>linkedin.com/in/denamielleonardo
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+          <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+        </svg>
+        {{ email }}
+      </p>
+
+      <p class="small align">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect width="4" height="12" x="2" y="9"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+        <a [href]="linkedinUrl" style="color: rgb(163, 163, 163);" target="_blank" rel="noopener noreferrer">{{ linkedin }}</a>
       </p>
     </div>
   </div>
 
+  <!-- RIGHT PANEL -->
   <div class="right-container">
+
+    <!-- About / Cover Letter -->
+    <!-- <section class="cover-letter">
+      <p *ngFor="let paragraph of about; let last = last" [class.mb-0]="last">
+        {{ paragraph }}
+      </p>
+    </section> -->
     <section class="cover-letter">
       <p>
         I'm a Senior Software Developer based in the Philippines with 8+ years of experience building robust, scalable applications. I specialize in creating high-performance mobile and web solutions using modern frameworks like <span class="highlight">Angular</span>, <span class="highlight">Ionic</span>, <span class="highlight">Flutter</span>, and <span class="highlight">React Native</span>.
@@ -34,61 +67,46 @@
       </p>
     </section>
 
+    <!-- Experience -->
     <section class="experience">
-      <div class="card">
+      <div class="card" *ngFor="let exp of experiences">
         <div class="year">
-          <p>March 2020 - Present</p>
-        </div>
-
-        <div class="content">
-          <p class="highlight">Full Stack Developer</p>
-          <p class="small">Cario · Australia</p>
-          <p class="small summary">Lead the development of a mobile application for logistics management, resulting in a 30% increase in operational efficiency.</p>
-        </div>
-      </div> 
-
-      <div class="card">
-        <div class="year">
-          <p>Aug 2023 — Feb 2025</p>
+          <p>{{ exp.period }}</p>
         </div>
         <div class="content">
-          <p class="highlight">Mobile Application Developer</p>
-          <p class="small">Ahsay Operation Centre Limited · Makati City</p>
-          <p class="small summary">Designed, built and maintained high performance, reusable reliable code including UI and core functionality. Explored and worked on hybrid applications as needed.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="year">
-          <p>Dec 2018 — Aug 2023</p>
-        </div>
-
-        <div class="content">
-          <p class="highlight">Senior Software Developer</p>
-          <p class="small">Eclectus Technologies Inc. · Taguig City</p>
-          <p class="small summary">Conceptualized, designed, developed and improved/maintained in-house applications. Acted as project lead driving requirements gathering, design and deployment. Explored and worked on hybrid applications.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="year">
-          <p>June 2017 — Oct 2018</p>
-        </div>
-
-        <div class="content">
-          <p class="highlight">Junior Software Developer</p>
-          <p class="small">Wireless Link Technologies Inc. · Manila City</p>
-          <p class="small summary">Implemented new services in applications as needed. Designed, built and maintained high performance reusable code. Explored and worked on hybrid applications.</p>
+          <p class="highlight">{{ exp.title }}</p>
+          <p class="small">{{ exp.company }} · {{ exp.location }}</p>
+          <p class="small summary">{{ exp.summary }}</p>
         </div>
       </div>
     </section>
 
+    <!-- Skills -->
     <section class="skills">
-      <h3>Skills sections</h3>
+      <div class="skills-grid">
+        <div class="skills-group" *ngFor="let group of skillGroups">
+          <h5>{{ group.heading }}</h5>
+          <div class="list">
+            <span class="list-item" *ngFor="let item of group.items">{{ item }}</span>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- Projects -->
     <section class="projects">
-      <h3>Projects section</h3>
+      <div class="container">
+        <div class="card" *ngFor="let project of projects">
+          <img src="" alt="">
+          <div class="content">
+            <p class="highlight">{{ project.title }}</p>
+            <p class="small">{{ project.description }}</p>
+            <div class="list">
+              <span class="list-item" *ngFor="let tag of project.tags">{{ tag }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </div>

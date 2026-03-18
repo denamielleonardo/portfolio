@@ -3,7 +3,7 @@
 
 div.main-container {
     display: flex;
-    padding: 5% 20%;
+    padding: 5% 15%;
     color: rgb(163, 163, 163);
     gap: 8%;
 
@@ -52,45 +52,137 @@ div.main-container {
         flex: 2;
 
         section:not(:last-child) {
-            margin-bottom: 8vh;
+            margin-bottom: 10vh;
         }
 
-        .card {
-            display: flex;
-            border-radius: 10px;
-            position: relative;
-            gap: 1%;
-            
-            &:not(:last-child) {
-                margin-bottom: 5vh;
+        section.experience {
+            .card {
+                display: flex;
+                border-radius: 10px;
+                position: relative;
+                gap: 1%;
+                
+                &:not(:last-child) {
+                    margin-bottom: 5vh;
+                }
+
+                .year {
+                    flex: 1;
+                }
+
+                .content {
+                    flex: 2;
+
+                    .summary {
+                        margin-top: 2vh;
+                    }
+                }
             }
 
-            .year {
-                flex: 1;
+            .card::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: transparent;
+                z-index: -1;
+                transition: all 0.2s ease;
             }
 
-            .content {
-                flex: 2;
+            .card:hover::before {
+                inset: -20px;
+                background: rgb(163, 163, 163, 0.05);
+                border-radius: 10px;
+            }
+        }
 
-                .summary {
-                    margin-top: 2vh;
+        section.skills {
+            .skills-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+
+                // Tablet: still 2 columns but tighter gap
+                @media (max-width: 768px) {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1rem;
+                }
+
+                // Mobile: single column
+                @media (max-width: 480px) {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .skills-group {
+                h5 {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    margin-bottom: 0.5rem;
+                    color: #fff;
                 }
             }
         }
+    
+        section.projects {
+            .card {
+                display: flex;
+                border-radius: 10px;
+                position: relative;
+                gap: 10px;
+                
+                &:not(:last-child) {
+                    margin-bottom: 5vh;
+                }
 
-       .card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: transparent;
-            z-index: -1;
-            transition: all 0.2s ease;
+                img {
+                    background: rgb(163, 163, 163, 0.05);
+                    width: 156px;
+                    height: 156px;
+                }
+
+                p, div.list {
+                    margin-bottom: 15px;
+                }
+            }
+
+            .card::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: transparent;
+                z-index: -1;
+                transition: all 0.2s ease;
+            }
+
+            .card:hover::before {
+                inset: -20px;
+                background: rgb(163, 163, 163, 0.05);
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        .list-item {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+            background: rgb(32, 32, 32);
+            border-radius: 50px;
+            font-size: 0.74rem;
+            padding: 6px 12px;
+            color: #fff;
+            white-space: nowrap;
         }
 
-        .card:hover::before {
-            inset: -20px;
-            background: rgb(163, 163, 163, 0.05);
-            border-radius: 10px;
+        .list-item:hover {
+            background: rgba(150, 150, 150, 0.3);
+            transition: all 0.2s ease;
         }
     }
 }
