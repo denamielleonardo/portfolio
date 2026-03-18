@@ -17,6 +17,7 @@ interface Project {
   title: string;
   description: string;
   tags: string[];
+  link?: string;
 }
 
 @Component({
@@ -26,6 +27,8 @@ interface Project {
 })
 export class AppComponent implements OnInit {
 
+  isDarkMode = true;
+  isAnimating = false;
   name = 'Den Amiel Leonardo';
   role = 'Senior Software Engineer';
   phone = '+63 916 730 9212';
@@ -109,12 +112,14 @@ export class AppComponent implements OnInit {
     {
       title: 'Cario Connect App',
       description: 'Cross-platform mobile app available on Google Play Store & App Store for fleet operations and management.',
-      tags: ['Flutter', 'Bloc', '.NET Core', 'Azure Maps', 'SQLite', 'Firebase']
+      tags: ['Flutter', 'Bloc', '.NET Core', 'Azure Maps', 'SQLite', 'Firebase'],
+      link: 'https://apps.apple.com/au/app/carioconnect-v2/id6746742162'
     },
     {
       title: 'Kinboy App',
       description: 'High-performance mobile application with real-time data synchronization across platforms.',
-      tags: ['Angular', 'Ionic Framework', 'TypeScript', 'SQLite', 'Firebase']
+      tags: ['Angular', 'Ionic Framework', 'TypeScript', 'SQLite', 'Firebase'],
+      link: 'https://play.google.com/store/apps/details?id=com.kintips.goldminer&hl=fil'
     },
     {
       title: 'Eclectus Farms System',
@@ -124,12 +129,14 @@ export class AppComponent implements OnInit {
     {
       title: 'Larga Delivery App',
       description: 'Delivery management application for logistics operations and order fulfillment.',
-      tags: ['Angular', 'Ionic Framework', 'TypeScript', 'Firebase']
+      tags: ['Angular', 'Ionic Framework', 'TypeScript', 'Firebase'],
+      link: 'https://play.google.com/store/apps/details?id=com.eclectustechnologiesinc.largaproduction&hl=en'
     },
     {
       title: 'Eclectus Farms Warehouse Management App',
       description: 'Warehouse management application for agricultural supply chain operations.',
-      tags: ['Angular', 'Ionic Framework', 'TypeScript', 'Firebase']
+      tags: ['Angular', 'Ionic Framework', 'TypeScript', 'Firebase'],
+      link: 'https://play.google.com/store/apps/details?id=com.eclectustechnologiesinc.warehousemanagementproduction&hl=en'
     },
     {
       title: 'DFDelivers Order Fulfillment App',
@@ -139,17 +146,20 @@ export class AppComponent implements OnInit {
     {
       title: 'Eclectus Farms Farmers App',
       description: 'Mobile application for farmer field operations and data collection.',
-      tags: ['Angular', 'Ionic Framework', 'TypeScript', 'Firebase']
+      tags: ['Angular', 'Ionic Framework', 'TypeScript', 'Firebase'],
+      link: 'https://play.google.com/store/apps/details?id=com.eclectustechnologiesinc.eclectusfarmsfarmersmobile'
     },
     {
       title: 'Eclectus Farms FieldQC App',
       description: 'Field quality control application for agricultural produce inspection.',
-      tags: ['Angular', 'Ionic Framework', 'TypeScript', 'Firebase']
+      tags: ['Angular', 'Ionic Framework', 'TypeScript', 'Firebase'],
+      link: 'https://play.google.com/store/apps/details?id=com.eclectustechnologiesinc.eclectusfarmsfieldqcmobile&hl=en'
     },
     {
       title: 'Eclectus Farms Store App',
       description: 'Store management application for farm produce retailing.',
-      tags: ['Angular', 'Ionic Framework', 'TypeScript', 'Firebase']
+      tags: ['Angular', 'Ionic Framework', 'TypeScript', 'Firebase'],
+      link: 'https://play.google.com/store/apps/details?id=com.eclectustechnologiesinc.eclectusfarmstoremobile'
     },
     {
       title: 'WLT Fleet Management System',
@@ -166,4 +176,39 @@ export class AppComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void { }
+
+  openLink(url: string) {
+    window.open(url, '_blank', 'noopener noreferrer');
+  }
+  
+  toggleTheme(event: MouseEvent) {
+    if (this.isAnimating) return;
+
+    // Position the wipe origin at the click point
+    const overlay = document.querySelector('.theme-overlay') as HTMLElement;
+    const x = event.clientX;
+    const y = event.clientY;
+    overlay.style.left = `${x}px`;
+    overlay.style.top = `${y}px`;
+    overlay.style.width = '10px';
+    overlay.style.height = '10px';
+    overlay.style.marginLeft = '-5px';
+    overlay.style.marginTop = '-5px';
+
+    this.isAnimating = true;
+
+    // Switch theme at the midpoint of the animation
+    setTimeout(() => {
+        this.isDarkMode = !this.isDarkMode;
+        document.documentElement.setAttribute(
+            'data-theme',
+            this.isDarkMode ? 'dark' : 'light'
+        );
+    }, 200);
+
+    // Clean up after animation completes
+    setTimeout(() => {
+        this.isAnimating = false;
+    }, 650);
+  }
 }

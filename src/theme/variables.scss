@@ -5,4 +5,30 @@
     --secondary-text: #ccc;
     --accent-color: #1541bb;
     --accent-color-dark: #0f318e;
+
+    // Component colors
+    --card-hover-bg: rgba(163, 163, 163, 0.05);
+    --list-item-bg: rgb(32, 32, 32);
+    --list-item-hover-bg: rgba(150, 150, 150, 0.3);
+    --thumbnail-bg: rgba(163, 163, 163, 0.05);
+    --section-border-color: #ccc;
+    --link-color: rgb(163, 163, 163);
+    --contact-hover-color: #fff;
+}
+
+[data-theme="light"] {
+    --primary-bg: #f5f5f7;
+    --primary-text: #1a1a1a;
+    --secondary-text: #555;
+    --accent-color: #1541bb;
+    --accent-color-dark: #0f318e;
+
+    // Component colors
+    --card-hover-bg: rgba(0, 0, 0, 0.04);
+    --list-item-bg: #e2e2e6;
+    --list-item-hover-bg: rgba(0, 0, 0, 0.12);
+    --thumbnail-bg: rgba(0, 0, 0, 0.05);
+    --section-border-color: #999;
+    --link-color: #555;
+    --contact-hover-color: #000;
 }
