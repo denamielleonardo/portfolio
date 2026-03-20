@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, NgZone, OnDestroy, OnInit } from '@angular/core';
 
 interface Experience {
   period: string;
@@ -183,28 +183,30 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private observer!: IntersectionObserver;
 
-  constructor() { }
+  constructor(private ngZone: NgZone) { }
 
   ngOnInit(): void { }
 
   ngAfterViewInit() {
-    this.observer = new IntersectionObserver(
-      (entries) => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  entry.target.classList.add('is-visible');
-                  this.observer.unobserve(entry.target);
-              }
-          });
-      },
-      { 
-          threshold: 0.05,
-          rootMargin: '0px 0px -50px 0px'
-      }
-    );
-
-    document.querySelectorAll('.animate-section').forEach(el => {
-        this.observer.observe(el);
+    this.ngZone.runOutsideAngular(() => {
+      this.observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    this.observer.unobserve(entry.target);
+                }
+            });
+        },
+        { 
+            threshold: 0.05,
+            rootMargin: '0px 0px -50px 0px'
+        }
+      );
+  
+      document.querySelectorAll('.animate-section').forEach(el => {
+          this.observer.observe(el);
+      });
     });
   }
 
